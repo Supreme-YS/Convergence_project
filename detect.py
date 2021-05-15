@@ -105,23 +105,35 @@ def detect(opt):
                 # Write results
                 print('-->Write results')
                 for *xyxy, conf, cls in reversed(det):
-                    if save_txt:  # Write to file
-                        label = f'{names[int(cls)]} {conf:.2f}' # detected label name
-                        with open(txt_path + '.txt', 'a') as f:
-                            f.write(label +  '\n')
-
+                    # if save_txt:  # Write to file
+                    #     label = f'{names[int(cls)]} {conf:.2f}' # detected label name
+                    #     with open(txt_path + '.txt', 'a') as f:
+                    #         f.write(label +  '\n')
+                    #     print(label)
                     if save_img or view_img:  # Add bbox to image
-                        label = f'{names[int(cls)]}-{conf:.2f}'
-                        # plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=3)
+                        k = f'{names[int(cls)]}'
+                        v = float(f'{conf:.2f}')
+                        label = {k : v}
+                        # print(label)
+                        max_label = max(label.values())
+                        # print('-->label :' ,label)
+                for key, value in label.items():
+                    if value == max_label:
+                        result_dict = {key:value}
+                        print(result_dict)
+                        
 
-                        print('-->label :' ,label)
-                    labels.append(label)
-                    print(type(labels))
+                # print(max_label)
+                # print(type(max_label))
+                        #labels_dict = {string:i for i,string in enumerate(labels)}
+                    # labels.append(label)
+                # print(labels)
+                    
+                    
 
-                    with open("result_score.json", "w") as json_file:
-
-                        json.dump(labels, json_file)
-
+                #     with open("result_score.json", "w") as json_file:
+                #         json.dump(labels, json_file)
+                # print(labels_dict)
 
 
             # Print time (inference + NMS)
