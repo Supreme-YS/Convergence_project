@@ -1,5 +1,5 @@
-train: ../train_data/images/train/  # 128 images
-val: ../train_data/images/train/ # 128 images
+train: ../train_data/images/
+val: ../train_data/images/
 
 # number of classes
 nc: 3
