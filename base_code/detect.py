@@ -14,7 +14,6 @@ from utils.plots import plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 import os
 
-
 def detect(file_name):
     agnostic_nms = False
     augment = False
