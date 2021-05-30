@@ -24,7 +24,7 @@ def detect(file_name):
     exist_ok = True
     imgsz = 640
     iou_thres = 0.45
-    name = 'result_img'
+    # name = 'result_img'
     nosave = False
     project = 'static'
     save_conf = False
@@ -36,7 +36,7 @@ def detect(file_name):
     save_img = True
 
     # Directories
-    save_dir = Path(increment_path(Path(project) / name, exist_ok=True))  # increment run
+    save_dir = Path(increment_path(Path(project), exist_ok=True))  # increment run
 
     # Initialize
     set_logging()
@@ -111,17 +111,21 @@ def detect(file_name):
                     if save_img or view_img:  # Add bbox to image
                         k = f'{names[int(cls)]}'
                         v = float(f'{conf:.2f}')
-                        label = {k: v}
-                        max_label = max(label.values())
+                        label = {k : v}
+                        max_label = max(label.values()) # float
+                    for key, value in label.items():
+                        sorted_dict = sorted(label.items(), reverse=True, key=lambda item: item[1])
+                        # print(sorted_dict)
+                if (value >= 0.6) & (value == max_label):
+                    result_dict = {'name': key, 'score': value}
+                    print(result_dict)
+                else :
+                    print('other')
 
-                for key, value in label.items():
-                    if value == max_label:
-                        result_dict = {'name': key, 'score': value}
+                # with open(os.path.join(project, "result_score" + ".json"), "w") as json_file:
+                #     json.dump(result_dict, json_file)
 
-                with open(os.path.join(project, "result_score" + ".json"), "w") as json_file:
-                    json.dump(result_dict, json_file)
-
-    return result_dict
+        # return result_dict
 
 
 if __name__ == '__main__':
@@ -141,12 +145,12 @@ if __name__ == '__main__':
     parser.add_argument('--augment', action='store_true', help='augmented inference')
     parser.add_argument('--update', action='store_true', help='update all models')
     parser.add_argument('--project', default='static', help='save results to project/name')
-    parser.add_argument('--name', default='result_img', help='save results to project/name')
+    # parser.add_argument('--name', default='result_img', help='save results to project/name')
     parser.add_argument('--exist-ok', default=True, help='existing project/name ok, do not increment')
     opt = parser.parse_args()
     print(opt)
     check_requirements(exclude=('pycocotools', 'thop'))
-    file_name = '*.jpg'
+    file_name = 'pp_test_1.jpg'
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
             for weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
