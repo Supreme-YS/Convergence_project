@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>모니터링 서비스</title>
+</head>
+<body>
+<div id="map" style="width:100%;height:100vh;"></div>
+
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04256c25a2d2335f796602c6a4a36f64"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+	var machine = JSON.parse("{{ machineJson|escapejs }}");
+
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+		mapOption = {
+			center: new kakao.maps.LatLng(37.553124793754996, 126.97250381402795), // 지도의 중심좌표
+			level: 4, // 지도의 확대 레벨
+			mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		};
+
+	// 지도를 생성한다
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+
+	// 마커 이미지의 주소
+	var markerImageUrl = 'https://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png',
+		markerImageSize = new kakao.maps.Size(40, 42), // 마커 이미지의 크기
+		markerImageOptions = {
+			offset : new kakao.maps.Point(20, 42)// 마커 좌표에 일치시킬 이미지 안의 좌표
+		};
+
+	// 마커 이미지를 생성한다
+	var markerImage = new kakao.maps.MarkerImage(markerImageUrl, markerImageSize, markerImageOptions);
+
+	for (var i=0; i<machine.length; i++) {
+	// 지도에 마커를 생성하고 표시한다
+		var marker = new kakao.maps.Marker({
+			position: new kakao.maps.LatLng(machine[i].lat,machine[i].lng), // 마커의 좌표
+			draggable : true, // 마커를 드래그 가능하도록 설정한다
+			image : markerImage, // 마커의 이미지
+			map: map // 마커를 표시할 지도 객체
+		});
+
+ 		var content = '<div style="padding:5px;">'
+					   +'<h4>주소 : '+machine[i].addr+'</h4>'
+					   +'<p>pet 개수: '+machine[i].pet_cnt+'/'+machine[i].total_cnt+'<br/>'
+					   +'pp 개수: '+machine[i].pp_cnt+'/'+machine[i].total_cnt+'<br/>'
+				       +'ps 개수 : '+machine[i].ps_cnt+'/'+machine[i].total_cnt+'<br/>'
+					   +'<h5>총 수용량 : '+machine[i].total_cnt+'</h5>'
+					   '</div>'
+
+		// 마커 위에 표시할 인포윈도우를 생성한다
+		var infowindow = new kakao.maps.InfoWindow({
+			content : content,
+			backgroundColor : "#eee",
+			borderColor : "#151515",
+			borderWidth: 4,
+			anchorColor: "#eee",
+		});
+
+		// 인포윈도우를 지도에 표시한다
+		infowindow.open(map, marker);
+}
+	</script>
+</body>
+</html>
