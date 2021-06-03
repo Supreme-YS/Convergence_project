@@ -16,12 +16,11 @@
 |IoT|한상범|디바이스 제작, 이기종간 통신망 구축 및 최적화, 시연 동영상 기획 및 제작| 
 
 ---
-<details>
-<summary>시연영상</summary>
-<div markdown="1">       
+<details><summary>Need More Details</summary><div markdown="1">contents</div></details>
 
-</div>
-</details>
+---
+>[AIRSM](https://www.youtube.com/watch?v=lVkdkw2LoEE) 시연 영
+
 
 
 
