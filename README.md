@@ -15,6 +15,15 @@
 |Big-Data|박나영|데이터 센터의 데이터를 활용한 디바이스 최적 입지 선정| 
 |IoT|한상범|디바이스 제작, 이기종간 통신망 구축 및 최적화, 시연 동영상 기획 및 제작| 
 
+---
+<details>
+<summary>시연영상</summary>
+<div markdown="1">       
+
+</div>
+</details>
+
+
 
 
 
