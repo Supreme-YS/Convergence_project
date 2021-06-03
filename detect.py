@@ -116,16 +116,19 @@ def detect(file_name):
                     for key, value in label.items():
                         sorted_dict = sorted(label.items(), reverse=True, key=lambda item: item[1])
                         # print(sorted_dict)
-                if (value >= 0.6) & (value == max_label):
+                if (value > 0.7) & (value == max_label):
                     result_dict = {'name': key, 'score': value}
-                    print(result_dict)
+                    # print(result_dict)
+                    return result_dict
                 else :
-                    print('other')
+                    result_dict = {'name' : 'OTHER', 'score' : value}
+                    # print(result_dict)
+                    return result_dict
 
                 # with open(os.path.join(project, "result_score" + ".json"), "w") as json_file:
                 #     json.dump(result_dict, json_file)
 
-        # return result_dict
+            # return result_dict
 
 
 if __name__ == '__main__':
@@ -150,7 +153,7 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
     check_requirements(exclude=('pycocotools', 'thop'))
-    file_name = 'pp_test_1.jpg'
+    file_name = 'slack_img_1.jpg'
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
             for weights in ['yolov5s.pt', 'yolov5m.pt', 'yolov5l.pt', 'yolov5x.pt']:
