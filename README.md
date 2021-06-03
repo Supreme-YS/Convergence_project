@@ -1,2 +1,4 @@
 # Convergence_project
-This repository is AIoT project about making smart recycling bin
+This repository is AIoT project about making AIRSM as AIoT Recycle Sorting Machine.
+
+
