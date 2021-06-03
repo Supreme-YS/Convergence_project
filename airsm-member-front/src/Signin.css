@@ -1,0 +1,12 @@
+.Signin{
+    text-align: center;
+}
+.form{
+    display:inline-block;
+}
+.input{
+    margin:10px;
+}
+.btn{
+    display:inline-block;
+}
