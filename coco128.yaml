@@ -1,0 +1,8 @@
+train: ../train_data/images/
+val: ../train_data/images/
+
+# number of classes
+nc: 3
+
+# class names
+names: [ 'PET','PP','PS' ]
