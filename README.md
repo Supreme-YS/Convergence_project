@@ -19,7 +19,7 @@
 <details><summary>Need More Details</summary><div markdown="1">contents</div></details>
 
 ---
->[AIRSM](https://www.youtube.com/watch?v=lVkdkw2LoEE) 시연 영
+>[AIRSM](https://www.youtube.com/watch?v=lVkdkw2LoEE) 시연영상
 
 
 
