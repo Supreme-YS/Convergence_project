@@ -1,0 +1,16 @@
+
+.CupCheck {
+    text-align: center;
+}
+.CupCheck-article{
+    position: relative;
+    top: 20%;
+  }
+.CupCheck-article .msg{
+    margin:10px;
+    font-size:30px;
+  }
+.button{
+    position:relative;
+    top:30px;
+}

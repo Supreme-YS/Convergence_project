@@ -1,0 +1,23 @@
+.Campaign {
+  text-align: center;
+}
+
+.Campaign-article{
+  position: relative;
+  top: 20%;
+}
+
+.Campaign-article .msg{
+  margin:10px;
+  font-size:30px;
+}
+
+.img{
+  width: 300px;
+  height: 300px;
+  margin:10px;
+}
+
+.btn{
+  top:50px;
+}

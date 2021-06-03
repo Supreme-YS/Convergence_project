@@ -1,0 +1,25 @@
+.SavePoint {
+    text-align: center;
+}
+  
+.SavePoint-article{
+  position: relative;
+  top: 30px;
+}
+.SavePoint-btn1{
+  position: relative; 
+  top: 30px;
+  right: 10px;
+}
+.SavePoint-btn2{
+  position: relative; 
+  top: 30px;
+  left: 10px;
+}
+
+.img{
+  height:250px;
+  width:250px;
+  position:relative;
+  top:40px;
+}

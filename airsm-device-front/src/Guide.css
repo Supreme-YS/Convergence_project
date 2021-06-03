@@ -1,0 +1,21 @@
+.Guide{
+    text-align: center;
+}
+.Guide-article{
+    position: relative;
+    top: 20%;
+}
+
+.img{
+    width:200px;
+    height:200px;
+    margin:10px;
+}
+.btn{
+    top:40px;
+}
+
+.load{
+    position:relative;
+    top:50px;
+}
