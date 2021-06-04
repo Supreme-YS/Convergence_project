@@ -38,6 +38,8 @@
 ---
 >[AIRSM](https://www.youtube.com/watch?v=lVkdkw2LoEE) 시연영상
 
+  >![iOS 이미지](https://user-images.githubusercontent.com/46801877/120769611-44fa9980-c558-11eb-8fe5-2a5d2160c519.gif)
+
 
 
 
