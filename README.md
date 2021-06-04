@@ -31,8 +31,6 @@
   <li> 프로젝트 목적 : 플라스틱 컵 재질의 정확한 분류를 통한 재활용률 증대, 사용자들에게 올바른 분리수거 방법 인식 재고 </li>
   <li> 서비스 흐름도(Service Flow)  <p align="center"><img width="600" height="400" src="https://user-images.githubusercontent.com/46801877/120742819-a0199580-c532-11eb-82fd-cc07b96e6d3d.png"></p></li>
   <li> 아키텍쳐(Service Architecture) <p align="center"><img width="1000" height="400" src="https://user-images.githubusercontent.com/46801877/120744657-6fd3f600-c536-11eb-84b8-5d14a2560526.png">
-
-
 </div></details>
 
 ---
