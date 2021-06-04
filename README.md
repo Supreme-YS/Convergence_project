@@ -16,7 +16,12 @@
 |IoT|한상범|디바이스 제작, 이기종간 통신망 구축 및 최적화, 시연 동영상 기획 및 제작| 
 
 ---
-<details><summary>Need More Details</summary><div markdown="1">contents</div></details>
+<details><summary>Need More Details</summary><div markdown="1">
+  <li> 프로젝트 배경 - 코로나 시대로 인한 플라스틱 제품 사용 ⬆️, 하지만 재활용률은 ⬇️ 따라서, 플라스틱의 종류별 분리수거의 필요성 </li>
+  <li> 프로젝트 목적 - 플라스틱 컵 재질의 정확한 분류를 통한 재활용률 증대, 사용자들에게 올바른 분리수거 방법 인식 재고 </li>
+  <li> 서비스 흐름도 - <img src="/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG"  width="700" height="370">
+
+</div></details>
 
 ---
 >[AIRSM](https://www.youtube.com/watch?v=lVkdkw2LoEE) 시연영상
